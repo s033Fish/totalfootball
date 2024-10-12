@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from totalfootball.views import login_action, register_action, homepage_action
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('', login_action, name='home'),
+    path('login', login_action, name="login"),
+    path('register', register_action, name="register"),
+    path('homepage', homepage_action, name="homepage"),
 ]
